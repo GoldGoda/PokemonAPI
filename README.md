@@ -17,5 +17,4 @@ Frontend: html,css,js
 Backend: c++/Drogon => https://drogon.org/
 Data Base: Mysql
 
-
-
+En este proyecto utilice localStorage, cookies y otras tecnologias. La idea al desarrollar este proyecto de esta manera fue evitar exponer la api principal para filtrar de manera correcta la informacion que se nos solicitaba y la authorizacion 
