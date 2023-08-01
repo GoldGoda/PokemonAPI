@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon API Auth</title>
+</head>
+<body>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        
+        .container{
+            background-color: blueviolet;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: 10px;    
+        }
+
+        .container input button{
+            width: 100%;
+        }
+
+        .container h2{
+            color: whitesmoke;
+        }
+        .container a{
+            color: whitesmoke;
+        }
+
+    </style>
+
+
+    <div class="container">
+        <h2>Loguearse</h2>
+        <input type="text"     id="emailTxt" placeholder="email">
+        <input type="password" id="pwdTxt" placeholder="password">
+        <button id="signInBtn">Ingresar</button>
+        <a href="./register.html">Crear una cuenta</a>
+    </div>
+    <script src="./utils.js"></script>
+    <script>
+        const signInBtn = document.getElementById("signInBtn");
+
+        let userTxt = document.getElementById("emailTxt");
+        let passwordTxt = document.getElementById("pwdTxt");
+
+        
+        signInBtn.addEventListener("click", ()=>{
+            let user = userTxt.value;
+            let password = passwordTxt.value;
+            signIn(user, password);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+*{
+    margin:  0px;
+    padding: 0px;
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 10%;
+}
+
+.pokemon-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-top: 1%;
+    padding-left: 1%;
+}
+
+.pokemon-list button{
+    width: 33%;
+    height: 100px;
+
+    background-color: blueviolet;
+    color:whitesmoke;
+    font-weight: bold;
+    border: none;
+}
+
+.pokemon-list button:hover{
+    background-color: rgb(84, 10, 154);
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

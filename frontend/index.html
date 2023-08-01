@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokemon API</title>
+</head>
+<style>
+    footer{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+</style>
+<body>
+    <div id="pokemon-list" class="pokemon-list">
+    </div>
+    
+    <footer>
+        <button id="prev">anterior</button>
+        <h3 id="pokeIndex">(0 - 20) de </h3>
+        <button id="next">siguiente</button>
+    </footer>
+
+    <script src="./utils.js"></script>
+    <script>
+        LoadPokemonNames();
+        let index = document.getElementById("pokeIndex");
+        let prevBtn = document.getElementById("prev");
+        let nextBtn = document.getElementById("next");
+
+        let totalPokemons = localStorage.getItem("pokemonCount");
+
+        let pokemonCurrentIndex = localStorage.getItem("pokemonIndex");
+        index.innerText = '(' + Number(pokemonCurrentIndex) + " - "+ (Number( pokemonCurrentIndex )+20) + ") de " + Number(totalPokemons);
+        
+        prevBtn.addEventListener( "click", () => {
+            if(Number(localStorage.getItem("pokemonIndex")) > 0){
+
+                localStorage.setItem("pokemonIndex", Number(localStorage.getItem("pokemonIndex")) - 20);
+                LoadPokemonNames( localStorage.getItem("pokemonIndex") );
+                
+                let pokemonCurrentIndex = localStorage.getItem("pokemonIndex");
+                index.innerText = '(' + Number(pokemonCurrentIndex) + " - "+ (Number( pokemonCurrentIndex )+20) + ") de " + Number(totalPokemons); 
+            }
+        } );
+        
+        nextBtn.addEventListener( "click", () => {
+            if(Number(localStorage.getItem("pokemonIndex")) < Number(localStorage.getItem("pokemonCount")) ){
+                localStorage.setItem("pokemonIndex", Number(localStorage.getItem("pokemonIndex")) + 20);
+                LoadPokemonNames( localStorage.getItem("pokemonIndex") );
+
+                let pokemonCurrentIndex = localStorage.getItem("pokemonIndex");
+                index.innerText = '(' + Number(pokemonCurrentIndex) + " - "+ (Number( pokemonCurrentIndex )+20) + ") de " + Number(totalPokemons);
+            }
+    } );
+
+    </script>
+</body>
+</html>
