@@ -1,6 +1,9 @@
 # PokemonAPI
 En esta implementacion se utiliza un frontend, un banckend y una base de datos mysql.
 
+# Tiempo de desarrollo
+Este prueba tecnica fue desarrollada en 2 dias en los cuales cada dia se tomo 1 hora de desarrollo
+
 # Evidencia de ejecucion
 https://youtu.be/m98fuU6_kko
 
